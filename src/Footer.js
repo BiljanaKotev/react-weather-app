@@ -1,9 +1,9 @@
 import React from "react";
-import "./Links.css";
+import "./Footer.css";
 
-export default function Links() {
+export default function Footer() {
   return (
-    <div className="Links">
+    <div className="Footer">
       <footer>
         <p>
           <a href="https://github.com/BiljanaKotev/react-weather-app" target="_blank">
