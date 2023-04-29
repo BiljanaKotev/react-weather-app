@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SpinnerCircular } from "spinners-react";
 import axios from "axios";
 import "./Search.css";
 
@@ -9,11 +10,12 @@ export default function Search(props) {
 
   function showTemperature(response) {
     setSubmitted(true);
+
     setTemperature({
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       humidity: Math.round(response.data.main.humidity),
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`,
       description: response.data.weather[0].description,
     });
   }
@@ -59,6 +61,8 @@ export default function Search(props) {
           <input type="search" placeholder="Enter a city.." onChange={updateCity} />
           <button type="Submit">Search</button>
         </form>
+
+        {/* <SpinnerCircular /> */}
       </div>
     );
   }
